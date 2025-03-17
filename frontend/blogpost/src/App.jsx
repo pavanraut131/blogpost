@@ -1,4 +1,3 @@
-import "./App.css";
 import Blog from "./components/Blog";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BlogDetails from "./components/BlogDetails";

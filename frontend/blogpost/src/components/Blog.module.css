@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: chocolate;
+}
+.blogs {
+  display: flex;
+  flex-direction: column;
+}
+.blogItem {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: lightgrey;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.blogItem:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.blogTitle {
+  font-size: 25px;
+  color: darkslategray;
+  font-weight: bolder;
+}
+.author {
+  font-size: 15px;
+  color: grey;
+  padding-bottom: 5px;
+}
+
+.readbutton {
+  background-color: #ecc9c7;
+  color: black;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border-color: rgb(220, 228, 220);
+}
+.readbutton:hover {
+  background-color: #bd625d;
+  cursor: pointer;
+}
+.buttonpara {
+  margin-left: auto;
+}
+.buttoncreate {
+  padding: 8px 5px;
+  border-radius: 5px;
+  background-color: antiquewhite;
+  border-color: #ecc9c7;
+}
+.buttoncreate:hover {
+  background-color: pink;
+  cursor: pointer;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.pagebutton {
+  padding: 8px 15px;
+  color: black;
+  border-radius: 5px;
+  background-color: antiquewhite;
+  border-color: #ecc9c7;
+}
+.pagebutton:hover {
+  background-color: pink;
+  cursor: pointer;
+}
+.currentpage {
+  color: rgb(241, 140, 7);
+}
+.pagebutton:disabled {
+  background-color: white;
+  cursor: not-allowed;
+}

@@ -60,7 +60,7 @@ const BlogForm = () => {
           type="file"
           required
           placeholder="select a image"
-          value={image}
+          value={formdata.image}
           onChange={handlechange}
           accept="image/*"
         />

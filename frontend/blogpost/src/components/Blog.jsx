@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { data, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import styles from "./Blog.module.css";
 
 const Blog = () => {
   const [blogs, setblog] = useState([]);
@@ -36,30 +37,46 @@ const Blog = () => {
   }
 
   return (
-    <div className="blog-container">
-      <p>
-        <button onClick={() => navigate("blog/create")}>
+    <div className={styles.container}>
+      <h1 className={styles.header}>Blogs of the Day</h1>
+      <div className={styles.blog}>
+        {blogs &&
+          blogs.map((blog) => (
+            <div className={styles.blogItem} key={blog.id}>
+              <p className={styles.blogTitle}>{blog.title}</p>
+              <p className={styles.author}>{blog.author}</p>
+              <button
+                className={styles.readbutton}
+                onClick={() => navigate(`blogs/${blog.id}`)}
+              >
+                Read Blog
+              </button>
+            </div>
+          ))}
+      </div>
+      <p className={styles.buttonpara}>
+        <button
+          className={styles.buttoncreate}
+          onClick={() => navigate("blog/create")}
+        >
           Create a new Blog
         </button>
       </p>
-      <h1>Blogs of the Day</h1>
-      {blogs &&
-        blogs.map((blog) => (
-          <div key={blog.id}>
-            <h2>{blog.title}</h2>
-            <p>{blog.author}</p>
-            <button onClick={() => navigate(`blogs/${blog.id}`)}>
-              Read Blog
-            </button>
-          </div>
-        ))}
 
       <footer>
-        <button onClick={handleprev} disabled={currentpage === 1}>
+        <button
+          className={styles.pagebutton}
+          onClick={handleprev}
+          disabled={currentpage === 1}
+        >
           prev
         </button>
-        <p>{currentpage}</p>
-        <button onClick={handlenext} disabled={currentpage >= totalpage}>
+        <p className={styles.currentpage}>{currentpage}</p>
+        <button
+          className={styles.pagebutton}
+          onClick={handlenext}
+          disabled={currentpage >= totalpage}
+        >
           next
         </button>
       </footer>
