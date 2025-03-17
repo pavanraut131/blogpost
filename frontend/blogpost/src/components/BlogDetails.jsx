@@ -34,6 +34,9 @@ const BlogDetails = () => {
         <h1>{blog.title}</h1>
         <h2>{blog.author}</h2>
         <p>{blog.content}</p>
+        <p>
+          {blog.image && <img src={`http://127.0.0.1:8000/${blog.image}`} />}
+        </p>
         <p>{blog.created_at}</p>
         <button onClick={() => handledelete(blog.id)}>Delete blog</button>
       </div>

@@ -1,5 +1,6 @@
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, parser_classes
 from rest_framework.response import Response
+from rest_framework.parsers import MultiPartParser, FormParser
 from .serializers import blog_serializer
 from .models import Blog
 from rest_framework import status
@@ -30,6 +31,7 @@ def Blog_detail(request, pk):
     return Response(serializer.data)
 
 @api_view(['POST'])
+@parser_classes([MultiPartParser, FormParser])
 def create_blog(request):
     serializer = blog_serializer(data = request.data)
     if serializer.is_valid():

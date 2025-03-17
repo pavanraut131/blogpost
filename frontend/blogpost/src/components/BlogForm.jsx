@@ -7,6 +7,7 @@ const BlogForm = () => {
     title: "",
     author: "",
     content: "",
+    image: "",
   });
   async function handlesubmit(e) {
     e.preventDefault();
@@ -19,7 +20,7 @@ const BlogForm = () => {
     });
 
     if (resposne.ok) {
-      setformdata({ title: "", author: "", content: "" });
+      setformdata({ title: "", author: "", content: "", image: "" });
       navigate("/");
     } else {
       alert("Failed to create the Blog");
@@ -54,6 +55,14 @@ const BlogForm = () => {
           placeholder="Enter The Content"
           onChange={handlechange}
           value={formdata.content}
+        />
+        <input
+          type="file"
+          required
+          placeholder="select a image"
+          value={image}
+          onChange={handlechange}
+          accept="image/*"
         />
         <button type="submit">Create Blog</button>
       </form>
